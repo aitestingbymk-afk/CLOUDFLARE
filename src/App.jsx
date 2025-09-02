@@ -6,8 +6,8 @@ export default function App() {
   const [cart, setCart] = useState([]);
   const [showLanding, setShowLanding] = useState(true);
   const [selectedCategory, setSelectedCategory] = useState("PIZZAS");
-  const TAX_PERCENTAGE = 5;
-  const DELIVERY_CHARGE = 30;
+  const TAX_PERCENTAGE = 1;
+ const DELIVERY_CHARGE = 10;
 
   const menu = [
     {
@@ -108,23 +108,34 @@ export default function App() {
   };
 
   if (showLanding) {
-    return (
-      <div className="landing">
-        <div className="landing-content">
-          <h1>BudgetMein</h1>
-          <p>Fastest Food Delivery in Jahangirpuri, Delhi!</p>
-          <div className="feature-highlights">
-            <div className="feature">🚚 30 Min Delivery</div>
-            <div className="feature">⭐ 4.8 Rating</div>
-            <div className="feature">💳 Easy Payment</div>
+  return (
+    <div className="landing">
+      <div className="landing-content">
+        <h1>BudgetMein</h1>
+        <p>Jahangirpuri's Fastest Food Delivery</p>
+        
+        <div className="hero-stats">
+          <div className="stat-box">
+            <span className="stat-number">30 Min</span>
+            <span className="stat-label">Delivery</span>
           </div>
-          <button onClick={() => setShowLanding(false)} className="cta-button">
-            Order Now <span>→</span>
-          </button>
+          <div className="stat-box">
+            <span className="stat-number">4.8★</span>
+            <span className="stat-label">Rating</span>
+          </div>
+          <div className="stat-box">
+            <span className="stat-number">Easy</span>
+            <span className="stat-label">Payment</span>
+          </div>
         </div>
+
+        <button onClick={() => setShowLanding(false)} className="cta-button">
+          Order Now →
+        </button>
       </div>
-    );
-  }
+    </div>
+  );
+}
 
   return (
     <div className="app-container">
